@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<robot name="ugv_chasis_simply" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="aluminum_section_2_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="aluminum_section_2_2_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="short_aluminum_section_1_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="camera_base_support_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="short_aluminum_section_1_2_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="aluminum_section_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="camera_base_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_IG42_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_IG42_2_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sprocket_1_1">
+  <material>${body_color}</material>
+  <mu1>200</mu1>
+  <mu2>100</mu2>
+  <kp>10000000.0</kp>
+  <kd>1.0</kd>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sprocket_2_1">
+  <material>${body_color}</material>
+  <mu1>200</mu1>
+  <mu2>100</mu2>
+  <kp>10000000.0</kp>
+  <kd>1.0</kd>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="idle_sprocket_bolt_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="idle_sprocket_bolt_2_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sprocket_3_1">
+  <material>${body_color}</material>
+  <mu1>200</mu1>
+  <mu2>100</mu2>
+  <kp>10000000.0</kp>
+  <kd>1.0</kd>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sprocket_4_1">
+  <material>${body_color}</material>
+  <mu1>200</mu1>
+  <mu2>100</mu2>
+  <kp>10000000.0</kp>
+  <kd>1.0</kd>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>Rev13</leftFrontJoint>
+    <rightFrontJoint>Rev16</rightFrontJoint>
+    <leftRearJoint>Rev17</leftRearJoint>
+    <rightRearJoint>Rev12</rightRearJoint>
+    <wheelSeparation>0.22445</wheelSeparation>
+    <wheelDiameter>0.1054</wheelDiameter>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>50</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
+  </plugin>
+</gazebo>
+
+</robot>

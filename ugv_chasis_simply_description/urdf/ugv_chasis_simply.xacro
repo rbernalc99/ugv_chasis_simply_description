@@ -1,0 +1,446 @@
+<?xml version="1.0" ?>
+<robot name="ugv_chasis_simply" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ugv_chasis_simply_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find ugv_chasis_simply_description)/urdf/ugv_chasis_simply.trans" />
+<xacro:include filename="$(find ugv_chasis_simply_description)/urdf/ugv_chasis_simply.gazebo" />
+
+<xacro:property name="h" value="0.0" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.183 0.0955 0.0005" rpy="0 0 0"/>
+    <mass value="0.54037338"/>
+    <inertia ixx="0.001643" iyy="0.006032" izz="0.007675" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 ${h}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="base_color"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 ${h}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="aluminum_section_2_1_1">
+  <inertial>
+    <origin xyz="-0.18274999999999997 -0.002209463183999669 0.02517559613634509" rpy="0 0 0"/>
+    <mass value="0.15936247278945964"/>
+    <inertia ixx="4.2e-05" iyy="0.001742" izz="0.001701" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.366 -0.0 ${h}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/aluminum_section_2_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.366 -0.0 ${h}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/aluminum_section_2_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="aluminum_section_2_2_1">
+  <inertial>
+    <origin xyz="-0.18274999999999997 0.002209463184005056 0.02517559613634509" rpy="0 0 0"/>
+    <mass value="0.15936247278945964"/>
+    <inertia ixx="4.2e-05" iyy="0.001742" izz="0.001701" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.366 -0.191 ${h}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/aluminum_section_2_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.366 -0.191 ${h}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/aluminum_section_2_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="short_aluminum_section_1_1_1">
+  <inertial>
+    <origin xyz="0.0764761996477037 -7.216449660063518e-16 0.01368904867970494" rpy="0 0 0"/>
+    <mass value="0.1312466780255859"/>
+    <inertia ixx="0.000409" iyy="2.3e-05" izz="0.000412" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0955 ${h-0.001}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/short_aluminum_section_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0955 ${h-0.001}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/short_aluminum_section_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_base_support_1">
+  <inertial>
+    <origin xyz="-0.07899999999999996 -2.7755575615628914e-17 0.02874832008249895" rpy="0 0 0"/>
+    <mass value="0.35396827499999983"/>
+    <inertia ixx="0.00029" iyy="0.000194" izz="0.000194" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.366 -0.0955 ${h-0.001}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/camera_base_support_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="camera_base_color"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.366 -0.0955 ${h-0.001}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/camera_base_support_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="short_aluminum_section_1_2_1">
+  <inertial>
+    <origin xyz="-0.013523800352296167 2.3592239273284576e-16 0.013689048679704965" rpy="0 0 0"/>
+    <mass value="0.1312466780255859"/>
+    <inertia ixx="0.000409" iyy="2.3e-05" izz="0.000412" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.3 -0.0955 ${h-0.004}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/short_aluminum_section_1_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.3 -0.0955 ${h-0.004}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/short_aluminum_section_1_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="aluminum_section_1_1">
+  <inertial>
+    <origin xyz="0.013689048679703442 -0.01352380035229618 0.12000000000000033" rpy="0 0 0"/>
+    <mass value="0.1649172917598984"/>
+    <inertia ixx="0.000808" iyy="0.000805" izz="2.9e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.274 -0.109 ${h-0.03325}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/aluminum_section_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.274 -0.109 ${h-0.03325}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/aluminum_section_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_base_1">
+  <inertial>
+    <origin xyz="-0.23998580179449036 -0.09559200000000008 0.2627440506049653" rpy="0 0 0"/>
+    <mass value="0.09052999054354093"/>
+    <inertia ixx="9.8e-05" iyy="2.6e-05" izz="9e-05" ixy="0.0" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.54725 -0.190952 ${h+0.0267}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/camera_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.54725 -0.190952 ${h+0.0267}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/camera_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_IG42_1_1">
+  <inertial>
+    <origin xyz="8.859946714567801e-06 0.060305169982188725 4.9417748785154925e-05" rpy="0 0 0"/>
+    <mass value="0.7180730609944159"/>
+    <inertia ixx="0.000916" iyy="0.000163" izz="0.000917" ixy="-0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.033 -0.0 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/motor_IG42_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.033 -0.0 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/motor_IG42_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_IG42_2_1">
+  <inertial>
+    <origin xyz="-8.85994671401269e-06 -0.060305169982187934 4.9417748785154925e-05" rpy="0 0 0"/>
+    <mass value="0.7180730609944159"/>
+    <inertia ixx="0.000916" iyy="0.000163" izz="0.000917" ixy="-0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.3335 -0.191 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/motor_IG42_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.3335 -0.191 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/motor_IG42_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sprocket_1_1">
+  <inertial>
+    <origin xyz="-8.410633300925952e-14 0.0037377569389918895 -2.8587202050012195e-13" rpy="0 0 0"/>
+    <mass value="0.481551579854151"/>
+    <inertia ixx="0.000317" iyy="0.000628" izz="0.000317" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.033 0.02 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="sprocket_color"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.033 0.02 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sprocket_2_1">
+  <inertial>
+    <origin xyz="8.37108160567368e-14 -0.003737756938991199 -2.8593793999220907e-13" rpy="0 0 0"/>
+    <mass value="0.481551579854151"/>
+    <inertia ixx="0.000317" iyy="0.000628" izz="0.000317" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.3335 -0.211 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="sprocket_color"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.3335 -0.211 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="idle_sprocket_bolt_1_1">
+  <inertial>
+    <origin xyz="2.1860291354869332e-13 -0.009819013088001345 -0.00015404798171953643" rpy="0 0 0"/>
+    <mass value="0.007550065008020204"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.3335 -0.0 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/idle_sprocket_bolt_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="sprocket_color"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.3335 -0.0 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/idle_sprocket_bolt_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="idle_sprocket_bolt_2_1">
+  <inertial>
+    <origin xyz="2.1908169722806292e-13 0.009819013088011141 0.0001540479817195295" rpy="0 0 0"/>
+    <mass value="0.007550065008020204"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.033 -0.191 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/idle_sprocket_bolt_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="sprocket_color"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.033 -0.191 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/idle_sprocket_bolt_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sprocket_3_1">
+  <inertial>
+    <origin xyz="2.8582691768974655e-13 0.0037377569389918618 -8.40924552214517e-14" rpy="0 0 0"/>
+    <mass value="0.481551579854151"/>
+    <inertia ixx="0.000317" iyy="0.000628" izz="0.000317" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.3335 0.02 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="sprocket_color"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.3335 0.02 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sprocket_4_1">
+  <inertial>
+    <origin xyz="-8.321815458955939e-14 -0.0037377569389820398 2.856499758951969e-13" rpy="0 0 0"/>
+    <mass value="0.481551579854151"/>
+    <inertia ixx="0.000317" iyy="0.000628" izz="0.000317" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.033 -0.211 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="sprocket_color"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.033 -0.211 ${h-0.025}" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ugv_chasis_simply_description/meshes/sprocket_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid3" type="fixed">
+  <origin xyz="0.366 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="aluminum_section_2_1_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin xyz="0.366 0.191 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="aluminum_section_2_2_1"/>
+</joint>
+
+<joint name="Rigid5" type="fixed">
+  <origin xyz="0.0 0.0955 0.001" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="short_aluminum_section_1_1_1"/>
+</joint>
+
+<joint name="Rigid6" type="fixed">
+  <origin xyz="0.366 0.0955 0.001" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_base_support_1"/>
+</joint>
+
+<joint name="Rigid7" type="fixed">
+  <origin xyz="-0.066 0.0 0.003" rpy="0 0 0"/>
+  <parent link="camera_base_support_1"/>
+  <child link="short_aluminum_section_1_2_1"/>
+</joint>
+
+<joint name="Rigid8" type="fixed">
+  <origin xyz="-0.092 0.0135 0.03225" rpy="0 0 0"/>
+  <parent link="camera_base_support_1"/>
+  <child link="aluminum_section_1_1"/>
+</joint>
+
+<joint name="Rigid9" type="fixed">
+  <origin xyz="0.27325 0.081952 -0.05995" rpy="0 0 0"/>
+  <parent link="aluminum_section_1_1"/>
+  <child link="camera_base_1"/>
+</joint>
+
+<joint name="Rigid10" type="fixed">
+  <origin xyz="-0.333 0.0 0.025" rpy="0 0 0"/>
+  <parent link="aluminum_section_2_1_1"/>
+  <child link="motor_IG42_1_1"/>
+</joint>
+
+<joint name="Rigid11" type="fixed">
+  <origin xyz="-0.0325 0.0 0.025" rpy="0 0 0"/>
+  <parent link="aluminum_section_2_2_1"/>
+  <child link="motor_IG42_2_1"/>
+</joint>
+
+<joint name="Rev12" type="continuous">
+  <origin xyz="0.0 -0.02 0.0" rpy="0 0 0"/>
+  <parent link="motor_IG42_1_1"/>
+  <child link="sprocket_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev13" type="continuous">
+  <origin xyz="0.0 0.02 0.0" rpy="0 0 0"/>
+  <parent link="motor_IG42_2_1"/>
+  <child link="sprocket_2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid14" type="fixed">
+  <origin xyz="-0.0325 0.0 0.025" rpy="0 0 0"/>
+  <parent link="aluminum_section_2_1_1"/>
+  <child link="idle_sprocket_bolt_1_1"/>
+</joint>
+
+<joint name="Rigid15" type="fixed">
+  <origin xyz="-0.333 0.0 0.025" rpy="0 0 0"/>
+  <parent link="aluminum_section_2_2_1"/>
+  <child link="idle_sprocket_bolt_2_1"/>
+</joint>
+
+<joint name="Rev16" type="continuous">
+  <origin xyz="0.0 -0.02 0.0" rpy="0 0 0"/>
+  <parent link="idle_sprocket_bolt_1_1"/>
+  <child link="sprocket_3_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev17" type="continuous">
+  <origin xyz="0.0 0.02 0.0" rpy="0 0 0"/>
+  <parent link="idle_sprocket_bolt_2_1"/>
+  <child link="sprocket_4_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<!-- <gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>ugv_chasis_simply</robotNamespace>
+  </plugin>
+</gazebo> -->
+
+</robot>
